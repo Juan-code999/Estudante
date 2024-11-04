@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using System.Data.SQLite;
 
-namespace Crud_Estudante._02_Repositorios.Data
+namespace Core.Repositorios.Data
 {
     public static class InicializadorBd
     {

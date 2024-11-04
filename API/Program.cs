@@ -1,4 +1,4 @@
-using Crud_Estudante._02_Repositorios.Data;
+using Core.Repositorios.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
