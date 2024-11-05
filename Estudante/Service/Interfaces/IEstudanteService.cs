@@ -6,5 +6,7 @@ namespace Core.Service.Interfaces
     {
         void Adicionar(Estudante estudante);
         List<Estudante> Listar();
+        void Editar(Estudante estudanteEdit);
+        void Remover(int id);
     }
 }

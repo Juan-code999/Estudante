@@ -30,6 +30,17 @@ namespace API.Controllers
         {
             return _service.Listar();
         }
+        [HttpPut("EditarEstudante")] 
+        public void EditarEstudante(Estudante estudante)
+        {
+            _service.Editar(estudante);
+        }
+
+        [HttpDelete("RemoverEstudante")] 
+        public void RemoverEstudante(int id)
+        {
+            _service.Remover(id);
+        }
 
     }
 }

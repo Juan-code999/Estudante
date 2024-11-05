@@ -25,6 +25,28 @@ namespace Core.Repositorios
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.GetAll<Estudante>().ToList();
         }
+        private Estudante BuscarEstudantePorId(int id)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            return connection.Get<Estudante>(id);
+        }
+
+        public void Editar(Estudante editEstudante)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            connection.Update<Estudante>(editEstudante);
+        }
+
+        public void Remover(int id)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+
+            Estudante estudanteToRemove = BuscarEstudantePorId(id);
+
+            connection.Delete<Estudante>(estudanteToRemove);
+        }
 
     }
 }

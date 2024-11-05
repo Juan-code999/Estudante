@@ -11,5 +11,7 @@ namespace Core._02_Repositorios.Interfaces
     {
         void Adicionar(Estudante estudante);
         List<Estudante> Listar();
+        void Editar(Estudante editEstudante);
+        void Remover(int id);
     }
 }

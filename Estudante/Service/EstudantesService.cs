@@ -23,6 +23,15 @@ namespace Core.Service
         {
             return repository.Listar();
         }
+        public void Editar(Estudante estudanteEdit)
+        {
+            repository.Editar(estudanteEdit);
+        }
+
+        public void Remover(int id)
+        {
+            repository.Remover(id);
+        }
 
     }
 }
