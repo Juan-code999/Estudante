@@ -1,5 +1,6 @@
 ﻿using Core.Entidates;
 using Core.Service;
+using Core.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -9,12 +10,11 @@ namespace API.Controllers
     public class EstudanteController : ControllerBase
     {
 
-        private readonly EstudantesService _service;
+        private readonly IEstudanteService _service;
 
-        public EstudanteController(IConfiguration config)
+        public EstudanteController(IEstudanteService estudantesService)
         {
-            string _config = config.GetConnectionString("DefaultConnection");
-            _service = new EstudantesService(_config);
+            _service = estudantesService;
 
         }
 

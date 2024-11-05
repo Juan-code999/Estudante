@@ -1,14 +1,16 @@
-﻿using Core.Entidates;
+﻿using Core._02_Repositorios.Interfaces;
+using Core.Entidates;
 using Core.Repositorios;
+using Core.Service.Interfaces;
 
 namespace Core.Service
 {
-    public class EstudantesService
+    public class EstudantesService : IEstudanteService
     {
-        public EstudantesReposity repository { get; set; }
-        public EstudantesService(string _config)
+        private readonly IEstudanteRepository repository;
+        public EstudantesService(IEstudanteRepository estudanterepository)
         {
-            repository = new EstudantesReposity(_config);
+            repository = estudanterepository;
         }
 
         public void Adicionar(Estudante estudante)

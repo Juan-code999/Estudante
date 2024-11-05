@@ -1,15 +1,17 @@
-﻿using Core.Entidates;
+﻿using Core._02_Repositorios.Interfaces;
+using Core.Entidates;
 using Dapper.Contrib.Extensions;
+using Microsoft.Extensions.Configuration;
 using System.Data.SQLite;
 
 namespace Core.Repositorios
 {
-    public class EstudantesReposity
+    public class EstudantesReposity : IEstudanteRepository
     {
         private readonly string ConnectionString;
-        public EstudantesReposity(string connectioString)
+        public EstudantesReposity(IConfiguration connection)
         {
-            ConnectionString = connectioString;
+            ConnectionString = connection.GetConnectionString("DefaultConnection");
         }
 
         public void Adicionar(Estudante estudante)
